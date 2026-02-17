@@ -26,36 +26,6 @@ An industry-style **hybrid movie recommendation system** combining **Collaborati
 
 ---
 
-## Project Structure
-
-Movie-Recommendation-Engine/
-│
-├── app/
-│ └── streamlit_app.py # Streamlit UI
-│
-├── data/
-│ ├── movies_final.csv
-│ └── ratings_final.csv
-│
-├── models/
-│ ├── svd_model.pkl
-│ ├── tfidf_vectorizer.pkl
-│ └── content_matrix.npy
-│
-├── src/
-│ ├── cf_model.py # Collaborative Filtering
-│ ├── content_model.py # Content-Based Model
-│ ├── hybrid.py # Hybrid Recommender
-│ ├── cold_start.py # Cold-start logic
-│ ├── diversity.py # MMR diversity re-ranking
-│ └── utils.py
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
-
----
-
 ## System Architecture
 
 1. **Collaborative Filtering:**  
