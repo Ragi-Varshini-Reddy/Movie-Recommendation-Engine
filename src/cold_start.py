@@ -10,4 +10,5 @@ class ColdStart:
             self.movies[mask]
             .sort_values(["avg_rating", "popularity_score"], ascending=False)
             .head(top_k)[["title", "genres", "avg_rating"]]
+            .reset_index(drop=True)
         )
