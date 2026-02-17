@@ -6,6 +6,7 @@ class HybridRecommender:
         self.cf = cf_model
         self.ratings = ratings_df
         self.alpha = alpha
+        self.id_to_idx = content_model.id_to_idx
 
     def score(self, user_id, movie_id):
         cf_score = self.cf.predict(user_id, movie_id)
@@ -15,6 +16,12 @@ class HybridRecommender:
     def recommend_top_n_diverse(self, user_id, movies_df, n=10, pre_k=50):
         rated = self.ratings[self.ratings.userId == user_id].movieId.values
         candidates = movies_df[~movies_df.movieId.isin(rated)]
+
+        if candidates.empty:
+            return movies_df.head(0)
+
+        pre_k = min(pre_k, len(candidates))
+        n = min(n, pre_k)
 
         scored = [
             (row.movieId, self.score(user_id, row.movieId))
@@ -30,6 +37,7 @@ class HybridRecommender:
             ids,
             scores,
             self.content.content_matrix,
+            self.id_to_idx,
             k=n
         )
 
