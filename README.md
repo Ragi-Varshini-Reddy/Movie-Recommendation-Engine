@@ -73,9 +73,9 @@ Hybrid model consistently outperformed individual approaches.
 
 ## How to Run Locally
 
-### 1. Install dependencies
 pip install -r requirements.txt
-
-### 2. Run Streamlit app
 streamlit run app/streamlit_app.py
 
+---
+
+This repository contains an implementation of a movie recommendation system using collaborative and content-based approaches, with a basic hybrid ranking and an interactive Streamlit interface.
