@@ -78,4 +78,10 @@ streamlit run app/streamlit_app.py
 
 ---
 
+## Notebooks
+
+- [Movie Rec Engine Notebook PDF](https://drive.google.com/file/d/1TJb8rdMIYPTzB9OMlVcUJ409p9Nvg7E5/view?usp=sharing)
+
+---
+
 This repository contains an implementation of a movie recommendation system using collaborative and content-based approaches, with a basic hybrid ranking and an interactive Streamlit interface.
